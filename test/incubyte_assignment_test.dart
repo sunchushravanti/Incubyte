@@ -35,6 +35,7 @@ void main() {
       'Function should return the sum of any amount number with handling newlines between numbers',
       () {
     expect(calculator.addNumbers("1\n2,3"), 6);
-    expect(calculator.addNumbers("4\n5\n6"), 15);
+    expect(calculator.addNumbers("4,5\n6"), 15);
+    expect(calculator.addNumbers("1\n1\n1"), 3);
   });
 }
