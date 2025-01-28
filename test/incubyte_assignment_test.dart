@@ -16,4 +16,11 @@ void main() {
     expect(calculator.addNumbers("1"), 1);
     expect(calculator.addNumbers("42"), 42);
   });
+
+  test(
+      'Function should return the sum of any amount number provided as input with comma seperator',
+      () {
+    expect(calculator.addNumbers("1,2"), 3);
+    expect(calculator.addNumbers("4,2,5"), 11);
+  });
 }
