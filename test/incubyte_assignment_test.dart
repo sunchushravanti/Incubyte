@@ -38,4 +38,12 @@ void main() {
     expect(calculator.addNumbers("4,5\n6"), 15);
     expect(calculator.addNumbers("1\n1\n1"), 3);
   });
+
+  test('Function should throw an exception for negative numbers', () {
+    expect(
+        () => calculator.addNumbers("1,-2,3"),
+        throwsA(predicate((e) =>
+            e is Exception &&
+            e.toString() == 'Exception: Negative numbers not allowed: -2')));
+  });
 }
