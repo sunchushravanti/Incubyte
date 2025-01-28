@@ -46,4 +46,13 @@ void main() {
             e is Exception &&
             e.toString() == 'Exception: Negative numbers not allowed: -2')));
   });
+
+  test('should list all negative numbers in the exception message', () {
+    expect(
+        () => calculator.addNumbers("1,-2,3,-4"),
+        throwsA(predicate((e) =>
+            e is Exception &&
+            e.toString() ==
+                'Exception: Negative numbers not allowed: -2, -4')));
+  });
 }
