@@ -59,7 +59,7 @@ void main() {
   });
 
   test('Function should return sum of number with any custom delimeter', () {
-    expect(calculator.addNumbers("//;\n1;2;3"), 6);
+    expect(calculator.addNumbers("//;1;2;3"), 6);
     expect(calculator.addNumbers("//|\n4|5|6"), 15);
   });
 }

@@ -11,6 +11,12 @@ class StringCalculator {
     }
     List<String> listOfNumbers = [];
     List<int> negatives = [];
+    if (numbers.startsWith('//')) {
+      int delimiterIndex = numbers.indexOf('\n');
+      delimiter = numbers.substring(2, delimiterIndex);
+      numbers = numbers.substring(delimiterIndex + 1);
+    }
+
     if (numbers.contains('\n')) {
       numbers = numbers.replaceAll('\n', delimiter);
     }
