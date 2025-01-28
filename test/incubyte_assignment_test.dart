@@ -47,12 +47,19 @@ void main() {
             e.toString() == 'Exception: Negative numbers not allowed: -2')));
   });
 
-  test('should list all negative numbers in the exception message', () {
+  test(
+      'Function should return all negative numbers in the string with the exception message',
+      () {
     expect(
         () => calculator.addNumbers("1,-2,3,-4"),
         throwsA(predicate((e) =>
             e is Exception &&
             e.toString() ==
                 'Exception: Negative numbers not allowed: -2, -4')));
+  });
+
+  test('Function should return sum of number with any custom delimeter', () {
+    expect(calculator.addNumbers("//;\n1;2;3"), 6);
+    expect(calculator.addNumbers("//|\n4|5|6"), 15);
   });
 }
