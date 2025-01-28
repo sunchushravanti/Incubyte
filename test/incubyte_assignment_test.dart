@@ -23,4 +23,18 @@ void main() {
     expect(calculator.addNumbers("1,2"), 3);
     expect(calculator.addNumbers("4,2,5"), 11);
   });
+
+  test(
+      'Function should return the sum of any amount number provided as input with comma seperator',
+      () {
+    expect(calculator.addNumbers("1,2,3,4"), 10);
+    expect(calculator.addNumbers("5,10,15"), 30);
+  });
+
+  test(
+      'Function should return the sum of any amount number with handling newlines between numbers',
+      () {
+    expect(calculator.addNumbers("1\n2,3"), 6);
+    expect(calculator.addNumbers("4\n5\n6"), 15);
+  });
 }
